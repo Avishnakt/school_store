@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% block body%}
+
+
+
+  <div class="container">
+      <div style="margin-left :300px;">
+          {% if messages %}
+          {% for msg in messages %}
+           <div class="alert alert alert-{{ message.tags }} m-2" id="msg" role="alert">
+            <h3>{{msg}}</h3>
+               <a  href="{% url 'index' %}"><button class="btn btn-primary" style="margin:20px 30px 0px 60px;">Home</button></a>
+
+           </div>
+          {% endfor %}
+          {% endif %}
+      </div>
+      <div style="margin: 50px 300px 50px 300px; border: black 2px;">
+          <div style="padding: 5px 20px 20px 20px; color: #505866;
+                  font-size:24px;
+                  font-weight: 500px;
+                      margin-bottom: 24px;
+                   text-transform: uppercase;
+                     letter-spacing: 1.3px;" class="section-header">
+             <h2>Form</h2>
+          </div>
+          <div  style="padding: 0px 100px 50px 120px;">
+            <form action="{% url 'store' %}" method="post">
+               {% csrf_token %}
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label style="padding-top:5px;">Username :</label>
+                        <div style="float:right;margin-left:30px; padding-bottom: 20px;">
+                        <input class="form-control" type="text" name="Username" placeholder="username" >
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label>DOB :</label>
+                        <div style="float:right;margin-left:65px;padding-bottom: 20px;">
+                        <input class='form-control' type="date" name="dob" size="10px">
+                    </div>
+                        </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label>Age :</label>
+                        <div style="float:right;margin-left:67px;padding-bottom: 20px;">
+                          <input class="form-control" type="number" name="age " placeholder="your age">
+                    </div>
+                        </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label> Gender :</label>
+                        <div style="float:right;margin-left:65px;padding-bottom: 20px;">
+                        <input type="radio"><label style="margin-left:10px;"> Male </label><input type="radio" style="margin-left:10px;"><label style="margin-left:10px;"> Female</label>
+                    </div>
+                        </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label>Phone No. :</label>
+                        <div style="float:right;margin-left:35px;padding-bottom: 20px;">
+                        <input type="number" name="number" size="20px;">
+                    </div>
+                </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px; " >
+                       <label >Mail id :</label>
+                        <div style="float:right;margin-left:60px;padding-bottom: 20px;">
+                          <input class="form-control" type="email" name="email">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label>Address:</label>
+                        <div style="float:right;margin-left:50px;padding-bottom: 20px;">
+                          <textarea class="form-control" name="address"  ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label>Department:</label>
+                        <div style="float:right;margin-left:40px;padding-bottom: 20px;">
+
+                        <select name="department" id="department">
+                            <option> Select Department</option>
+
+                       </select>
+                            <br> <br>
+
+                       Course  : <select name="course" id="course">
+                                <option>Course</option>
+
+
+                            </select>
+                            <br> <br>
+                        Specialization  : <select name="specification" id="specification">
+                                <option> Select </option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label> Purpose :</label>
+                        <div style="float:right;margin-left:50px;padding-bottom: 20px;">
+                        <select>
+                       <option> Purpose </option>
+                        <option> Enquiry </option>
+                       <option> Place order </option>
+                       <option> Return </option>
+
+
+                  </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="float :left; padding-right : 15px;" >
+                       <label> Materials provided :</label>
+                        <div style="float:right;margin-left:50px;padding-bottom: 20px;">
+                        <input type="checkbox">
+                    <label>Note Book</label> <br> <br>
+                    <input type="checkbox">
+                    <label>pen </label> <br><br>
+                    <input type="checkbox">
+                    <label>Take books</label>
+                    </div>
+                    </div>
+                </div>
+
+
+
+               <!--<div style="width: 50%; float: left"> -->
+
+
+            <button class="btn btn-danger" type="submit"  style="margin-left :60px;"> Submit </button>
+         </form>
+
+     </div>
+     </div>
+   </div>
+<style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+</style>
+{% endblock %}
