@@ -19,8 +19,8 @@
            <form action="{% url 'login' %}" method="post">
               {% csrf_token %}
                <input class="form-control" type="text" name="Username" placeholder="Username" size="10px"> <br> <br>
-                <input class="form-control" type="password" name="password" placeholder="your password">   <br> <br>
-               <input class="form-control" type="password" name="cpassword" placeholder="confirm password"> <br>
+               <input class="form-control" type="password" name="password" placeholder="your password">   <br> <br>
+                <br>
                <input  type="checkbox">
                <label>Remember me </label> <a href="#" style="padding-left:65px;"><h6 style="font-size:15px;">Forgot Password</h6></a> <br> <br>
                <button class="btn btn-danger" type="submit" style="margin-left :120px;">Login</button>
