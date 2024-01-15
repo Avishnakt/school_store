@@ -56,8 +56,7 @@ def login_page(request):
     if request.method == 'POST':
         user_name = request.POST.get('Username')
         password = request.POST.get('password')
-        password1 = request.POST.get('cpassword')
-        user = auth.authenticate(username=user_name, password=password, password1=password1)
+        user = auth.authenticate(username=user_name, password=password)
 
         if user is not None:
             auth.login(request, user)
